@@ -1,0 +1,90 @@
+.panier-content {
+  border: 1px solid black; /* Ajout de la bordure noire */
+  background-color: white; /* Définition de la couleur de fond blanche */
+  padding: 10px; /* Ajout de la marge intérieure pour séparer les éléments */
+  display: none; /* Par défaut, caché */
+}
+
+.panier-content.open {
+  display: block; /* Affichage lorsque la classe "open" est appliquée */
+  
+}
+
+.Panier {
+  position:absolute; 
+  top: 70px; 
+  right: 0px; /* Garde le panier sur le côté droit de la page */
+  width: 200px;
+  height: 500px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0; /* Supprime la marge par défaut */
+  text-align: center; /* Centre le texte horizontalement */
+  font-size: 30px;
+}
+
+.btn-commander {
+  margin-top: auto; /* Place le bouton au bas du conteneur */
+  width: 100%; /* Force le bouton à prendre toute la largeur */
+}
+
+.toggle-cart-btn {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center; /* Ajout pour centrer verticalement */
+  text-align: center; /* Centrer horizontalement */
+  background-color: #48abe0;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 13px;
+  height: 60px;
+  width: 60px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+button:hover {
+  background-color: #65b9e6;
+ }
+ 
+ button:active {
+   box-shadow: 0 0 2px darkslategray;
+   transform: translateY(2px);
+ }
+
+ /* Ajoutez ces styles à votre fichier PanierAchat.css */
+
+.cart-item-details button {
+  background-color: #48abe0;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.cart-item-details button:hover {
+  background-color: #65b9e6;
+}
+
+.cart-item-details button.remove {
+  background-color: #ff4d4d;
+}
+
+.cart-item-details button.remove:hover {
+  background-color: #ff6666;
+}
+
+

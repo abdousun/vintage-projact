@@ -1,0 +1,146 @@
+.cont{
+    flex: 1 1 auto;
+    max-width: 1200px;
+    padding: 0px;
+    padding-left: 0px;
+    height: auto;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 15px;
+    width: auto;
+    background-color:white;
+    border-radius: 20px;
+
+    
+
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,330px);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+
+}
+
+@media screen and (max-width: 770px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 300px);
+    gap: 40px;
+    justify-content: center;
+    align-content: center;
+  }
+}
+@media screen and (min-width: 771px) and (max-width: 1000px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 300px);
+    gap: 40px;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+
+
+
+
+.pr1{
+    max-width: 100%;
+    height: 250px;
+    width: 306px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    img {
+        transition: 1s transform;
+        width: 100%;
+      }
+      position: relative;
+
+    }
+
+
+
+.prod1{
+    cursor: pointer;
+    position: relative;
+    height: 340px;
+    &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+    .prTitle {
+            color: rgb(245, 53, 53);
+          }
+      
+}}
+
+.prTitle{
+    height: 100px;
+    transition: 0.2s color;
+    border: 1px solid var(--gray-2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.ic2{
+    font-size: 1000px;
+}
+
+.heartIcon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    color: #fff; /* Couleur du cœur */
+    border: 2px solid #fff; /* Contour blanc */
+    border-radius: 50%; /* Pour rendre le contour circulaire */
+    padding: 5px; /* Espace entre le contour et le cœur */
+  }
+
+
+  
+  .heartIcon:hover {
+    color: red; 
+  }
+  
+  .heartLiked {
+    color: red; 
+  }
+  
+
+.box{
+  position: relative;
+
+}
+.prPrice {
+  position: absolute;
+  bottom: 25px; 
+  left: 5px;
+  font-size: 18px; 
+}
+
+.btn-panier{
+  position: absolute;
+  bottom: 30px; 
+  right: 5px;
+  padding: 4px 8px;
+  background-color: #008CBA; 
+  border: none;
+  border-radius: 0%;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
