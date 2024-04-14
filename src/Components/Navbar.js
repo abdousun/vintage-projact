@@ -23,14 +23,14 @@ function Navbar() {
     <div className='Navbar' onClick={handleDivclick}>
       <FontAwesomeIcon className='ic-1' icon={faBars} onClick={toggleListVisibility} />
       <div className='brand'>
-        <Link to="/Content" style={{ textDecoration: 'none', color: 'inherit',display:"flex" }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit',display:"flex" }}>
           <img className='logo' src={logo} alt='logo vintage clothes' />
           <h1 className='title'>Vintage Clothes</h1>
         </Link>
       </div>
       <div className='btn1'>
         <Link to="/AddClient" className="btn btn-dark" style={{ marginRight: '5px', borderRadius: '20px' }}>Register</Link>
-        <button  className="btn btn-dark" style={{ borderRadius: '20px' }}>Connexion</button>
+        <Link to="/Content"  className="btn btn-dark" style={{ borderRadius: '20px' }}>AddProduct</Link>
       </div>
       {isListVisible && <ListXs />}
     </div>

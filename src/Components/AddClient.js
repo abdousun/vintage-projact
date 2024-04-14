@@ -4,22 +4,25 @@ import React, { useState } from 'react';
 import './AddClient.css';
 
 const AddClient = ({ onAddClient }) => {
-    const [fullName, setFullName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [address, setAddress] = useState('');
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastName] = useState('');
+
+    const [phone_number, setPhoneNumber] = useState('');
+    const [adresse, setAddress] = useState('');
     const [city, setCity] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newClient = {
-            fullName,
-            phoneNumber,
-            address,
+            first_name,
+            last_name,
+            phone_number,
+            adresse,
             city,
         };
         try {
             // Make an HTTP POST request to your backend API
-            const response = await fetch('/api/clients', {
+            const response = await fetch('http://localhost/client-microservice/public/api/clients', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +33,8 @@ const AddClient = ({ onAddClient }) => {
                 console.log('Client added successfully');
                 // Optionally, you can handle success response here
                 // For example, clear the form fields
-                setFullName('');
+                setFirstName('');
+                setLastName('');
                 setPhoneNumber('');
                 setAddress('');
                 setCity('');
@@ -47,16 +51,20 @@ const AddClient = ({ onAddClient }) => {
     return (
         <form className="add-client-form" onSubmit={handleSubmit}>
             <label>
-                Full Name:
-                <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                nom:
+                <input type="text" value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+            </label>
+            <label>
+                prénom:
+                <input type="text" value={last_name} onChange={(e) => setLastName(e.target.value)} />
             </label>
             <label>
                 Phone Number:
-                <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+                <input type="tel" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)} />
             </label>
             <label>
                 Address:
-                <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+                <input type="text" value={adresse} onChange={(e) => setAddress(e.target.value)} />
             </label>
             <label>
                 City:

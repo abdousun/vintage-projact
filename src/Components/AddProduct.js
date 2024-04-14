@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
-import './AddProduct.css';
+import { useNavigate } from 'react-router-dom' ; import './AddProduct.css';
 
 const AddProduct = ({ onAddProduct }) => {
-    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
-    const [urlImg, setUrlImg] = useState('');
+    const [image_url, setUrlImg] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const newProduct = {
-            title,
+            type:"type",
+            reference: "ref",
+            description,
             price,
-            urlImg,
+            image_url,
         };
         onAddProduct(newProduct); 
-        setTitle('');
+        setDescription('');
         setPrice('');
         setUrlImg('');
+        navigate("/Content")
     };
 
     return (
         <form className="add-product-form" onSubmit={handleSubmit}>
-                   <h1>Add Product</h1>
-
+            <h1>Add Product</h1>
             <label>
                 Title:
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
             </label>
             <label>
                 Price:
@@ -33,11 +36,11 @@ const AddProduct = ({ onAddProduct }) => {
             </label>
             <label>
                 URL:
-                <input type="text" value={urlImg} onChange={(e) => setUrlImg(e.target.value)} />
+                <input type="text" value={image_url} onChange={(e) => setUrlImg(e.target.value)} />
             </label>
             <button className="add-product-btn" type="submit">Add Product</button>
         </form>
     );
 };
 
-export default AddProduct
+export default AddProduct;
